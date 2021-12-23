@@ -2,231 +2,362 @@
 
 @font-face {
     font-family: 'Antonio';
+    src: url('../fonts/Antonio-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'AntonioLight';
+    src: url('../fonts/Antonio-Light.ttf');
+}
+
+@font-face {
+    font-family: 'AntonioMedium';
     src: url('../fonts/Antonio-Medium.ttf');
 }
 
 @font-face {
-    font-family: 'OpenSans';
-    src: url('../fonts/OpenSans-Regular.ttf');
+    font-family: 'AntonioSemiBold';
+    src: url('../fonts/Antonio-SemiBold.ttf');
 }
 
 @font-face {
-    font-family: 'OpenSansBold';
-    src: url('../fonts/OpenSans-Bold.ttf');
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'HeeboLight';
+    src: url('../fonts/Heebo-Light.ttf');
+}
+
+@font-face {
+    font-family: 'HeeboMedium';
+    src: url('../fonts/Heebo-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'HeeboSemiBold';
+    src: url('../fonts/Heebo-SemiBold.ttf');
 }
 
 :root {
     --bg-color: #10132F;
-    --font-color: #ffffff;
-    --hover-color: lightblue;
+    --button-color: #B09219;
+    --hover-color: #796411;
 }
 
 html, body {
-    height: 100%;
+    height: 100%;    
     font-size: 16px;
-    font-family: 'OpenSans', sans-serif;
-}
-
-.hidden {
-    display: none;
-}
-
-h2 {
-    margin: 72px 72px  auto auto;
-    max-width: 40vw;
-    font-family: "Antonio", sans-serif;
-    font-size: 4.91rem;
-    text-transform: uppercase;
-    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-    text-align: center;
-    color: #ffffff;
-
-    @media screen and (min-width: 600px) {
-        font-size: 9.8125rem;
-    }
+    font-family: 'Heebo', sans-serif;
 
     @media screen and (min-width: 1210px) {
-        font-size: 6.5rem;
-        margin: 0;
-        max-width: none;
-        padding-bottom: 30px;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'AntonioLight', sans-serif;
+}
+
+h1 {
+    padding-top: 240px;
+    text-align: center;
+    font-family: 'AntonioMedium', sans-serif;
+    font-size: 85px;
+    line-height: 112px;
+    text-transform: uppercase;
+    text-shadow: 0px 3px 6px #00000029;
+    color: #FFFFFF;
+
+    @media screen and (min-width: 640px) {
+        padding-top: 66px;        
     }
 
-    @media screen and (min-width: 1680px) {
-        font-size: 9.8125rem;
-        padding-bottom: 40px;
+    @media screen and (min-width: 1220px) {
+        font-size: 150px;
+        line-height: 190px;
+    }
+
+    @media screen and (min-width: 1510px) {
+        font-size: 184px;
+        line-height: 230px;
     }
 }
 
 .background__wrapper {
-    height: 100vh;    
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    height: 419px;
+    width: 100%;
+    background: transparent url('/src/images/felix_mobile.png') 0% 0% no-repeat padding-box;
+    background-size: cover;
+    opacity: 1;
 
-    main {
-        background-size: cover;
-        background-image: url('../images/felix_lmsi.png');
-        background-repeat: no-repeat;
-        color: var(--font-color);
-        height: 50vh;
-        overflow: hidden;
-        position: relative;
-        
-        h2 {
-            margin: 132px auto;
-            max-width: 100vw;
-            font-family: "Antonio", sans-serif;
-            font-size: 4.91rem;
-            text-transform: uppercase;
-            text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-            text-align: center;
-        }
-
-        @media screen and (min-width: 600px) {
-            height: 683px;
-
-            h2 {
-                margin: 72px 72px  auto auto;
-                font-size: 9.8125rem;
-                max-width: 40vw;
-            }
-        }
-
-        @media screen and (min-width: 1210px) {
-            background-size: cover;
-            height: 100vh;
-        }
+    &:after {
+        content: "";
+        display: block;
+        top: 82px;
+        left: 0px;
+        height: 419px;
+        width: 100%;
+        background: transparent linear-gradient(180deg, #C2CCE300 0%, #BBC6DF4B 29%, #B1BDD8 63%, #AEBAD680 100%) 0% 0% no-repeat padding-box;
+        mix-blend-mode: multiply;
+        opacity: 0.85;
     }
 
-    aside {
-        background-color: var(--bg-color);
-        color: var(--font-color);
-        text-align: center;
-        padding: 36px 10px;
-        
+    @media screen and (min-width: 640px) {
+        top: 0px;
+        left: 0px;
+        height: 360px;
+        width: 100%;
+        background: transparent url('/src/images/felix_desktop.png') 0% 0% no-repeat padding-box;
+        background-size: cover;
+        opacity: 1;
 
-        p {            
-            font-size: 1.125rem;
-            line-height: 1.375rem;
-            margin-bottom: 0.6875rem;
-
-            strong {
-                font-family: "OpenSansBold", sans-serif;
-                font-weight: 800;
-            }
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 72px;
-            li {
-
-                a {
-                    .icon {
-                        transition: all ease-out .3s;
-
-                        &:hover, &:focus, &:active, &:visited {
-                            fill: var(--hover-color)
-                        }
-                    }
-                }
-            }
-        }
-
-        ul.desktop {
+        &:after {
+            content: "";
             display: none;
         }
+    }
 
-        @media screen and (min-width: 600px) {
-            padding: 50px 94px;
+    @media screen and (min-width: 1210px) {
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+}
 
-        
-            p {
-                font-size: 2.25rem;
-                line-height: 2.75rem;
-                margin-bottom: 1.375rem;
+main {
+    > p {
+        font-family: 'HeeboMedium', sans-serif;
+        text-align: center;
+        line-height: 22px;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 640px) {
+        padding-left: 244px;
+        padding-right: 36px;
+    }
+
+    @media screen and (min-width: 1210px) {
+        padding-left: 50vw;
+    }
+
+}
+
+.event-list {    
+
+    &__title {
+        position: relative;
+        text-align: center;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin: 0;
+        padding: 7.45px 81px;
+        background-color: var(--bg-color);
+
+        &::after {
+            position: absolute;
+            bottom: -20px;
+            left: calc(50% - 20px);
+            content: "";
+            display: block;
+            width: 0; 
+            height: 0; 
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;            
+            border-top: 20px solid var(--bg-color);
+        }
+    }
+
+    &__list-wrapper {
+        background-color: #fff;
+        padding: 20px 0;
+    }
+
+    &__list {
+
+        li {
+            border-bottom: 1px solid var(--bg-color);
+            padding: 32px 45px;
+
+            &:last-of-type {
+                border: none;
             }
 
-            ul {
-                list-style: none;
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                margin: 72px;
-                li {
-    
-                    a {
-                        .icon {
-                            transition: all ease-out .3s;
-    
-                            &:hover, &:focus, &:active, &:visited {
-                                fill: var(--hover-color)
-                            }
-                        }
-                    }
+            @media screen and (min-width: 640px) {
+                border-bottom: 1px solid #5C76A188;
+            }
+
+            @media screen and (min-width: 1210px) {
+                padding: 8px 8px;
+                margin: 0 38px;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+
+                &:last-of-type {
+                    border-bottom: 1px solid #5C76A188;
                 }
             }
         }
 
+        .event-logo {
+
+            &__lmsi {
+                float: left;
+                height: 123px;
+                width: 89px;
+                background: transparent url('/src/images/lesmotssimprosent_logo.png') 0% 0% no-repeat padding-box;
+                background-size: cover;
+                margin-right: 15px;
+
+                @media screen and (min-width: 1210px) {
+                    height: 50px;
+                    width: 36px;
+                }
+            }
+        }
+
+        .event-date {
+            padding-bottom: 5px;
+            
+            &__day {
+                font-family: 'Antonio', sans-serif;
+                font-size: 39px;
+                float: left;
+            }
+
+            &__month {
+                display: block;
+                font-family: 'Antonio', sans-serif;
+                font-size: 17px;
+                text-transform: uppercase;
+                line-height: 22px;
+
+                @media screen and (min-width: 1210px) {
+                    float: left;
+                }
+            }
+
+            &__year {
+                display: block;
+                font-family: 'Antonio', sans-serif;
+                font-size: 17px;
+                text-transform: uppercase;
+            }
+
+            @media screen and (min-width: 1210px) {
+                float: left;
+            }
+        }
+
+        .event-title {            
+            line-height: 22px;
+
+            h3 {
+                font-family: 'HeeboSemiBold', sans-serif;
+            }
+            p {
+                font-family: 'HeeboLight', sans-serif;
+            }
+
+            @media screen and (min-width: 1210px) {
+                float: left;
+                padding-left: 50px;
+            }
+        }
+
+        .event-sub {            
+            width: 100%;
+
+            &::before {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            a {
+                margin-top: 15px;
+                display: block;
+                text-align: center;
+                background: var(--button-color);
+                text-decoration: none;
+                color: #fff;
+                font-family: 'Antonio', sans-serif;
+                font-size: 18px;
+                line-height: 30px;
+                text-transform: uppercase;
+                border-radius: 15px;
+                transition: all ease-in-out .3s;
+
+                &:hover {
+                    background-color: var(--hover-color);
+                }
+            }
+
+            @media screen and (min-width: 1210px) {
+                width: 180px;
+                float: right;                
+            }
+        }
+
         @media screen and (min-width: 1210px) {
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        @media screen and (min-width: 1210px) {
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+    }    
+}
+
+aside {
+    ul {
+        background-color: var(--bg-color);
+        text-align: center;
+
+        li {
+            display: inline-block;
+            padding: 22.5px;
+        }
+        
+    }
+
+    @media screen and (min-width: 1210px) {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+
+        ul {
             background-color: transparent;
-            position: absolute;
-            top: auto;
-            bottom: 36px;
-            right: 72px;
-            width: 30vw;
-            min-height: 0;
-            color: #000000;
-
-            p {
-                font-size: 1.125rem;
-                line-height: 1.250rem;
-                margin-bottom: 0.675rem;
+            text-align: left;
+            
+            li {
+                display: block;
+                padding: 22.5px;
             }
-
-            ul.mobile {
-                display: none;
-            }
-
-            ul.desktop {
-                display: flex;
-                margin: 20px 72px;
-            }
-        }
-
-        @media screen and (min-width: 1680px) {
-            width: 50vw;
-            top: 218px;
-            bottom: auto;
-
-            p {
-                font-size: 24px;
-                line-height: 28px;
-                margin-bottom: 1.375rem;
-            }
-
-            p {
-                padding: 0 10vw;
-            }
-
-            ul {
-                padding: 0 13vw;
-            }
-        }
+        }        
     }
 }
 
-.desktop {
-    display: none;    
+path {
+    fill: #fff;
 }
 
-@media screen and (min-width: 1210px) {
-    .mobile {
-        display: none;
-    }
-
-    .desktop {
-        display: block;
-    }
+.hidden {
+    display: none;
 }
